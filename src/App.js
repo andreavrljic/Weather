@@ -8,8 +8,8 @@ function App() {
 
   return (
 
-    <div className="wrapper">
-      <h1>Application</h1>
+    <div className="login-wrapper">
+      <h1>Wather</h1>
       <BrowserRouter>
         <Switch>
           <Route path="/weather">
