@@ -1,9 +1,6 @@
 import './App.css';
-import Login from './components/login'
 import Weather from './components/weather';
-import FirstLogin from './components/firstLogin'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import useToken from './components/useToken';
 import RegistrationForm from './components/register';
 
 
