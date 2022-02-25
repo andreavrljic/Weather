@@ -1,0 +1,77 @@
+import React, { useState } from "react";
+import usersData from '../users.json'
+import { Route, Redirect } from 'react-router'
+import { useHistory } from "react-router-dom";
+
+const Registration=(props)=> {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isEnable, setEnable] = useState(true);
+  const [token, setToken] = useState("");
+  const history = useHistory(); 
+  
+  const passwordValidation=()=>{
+    var validationCondition = /(?=.*\d)(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/;
+    return validationCondition.test(password);
+    }
+
+  const handleInput = () => {
+        if (passwordValidation()) {
+            setEnable(false)
+        }
+        else{ 
+            setEnable(true); 
+        };
+    };
+
+
+  const handleSubmit = (email, password) => {
+        let userExist = usersData.some(item => {
+            return item.email == email && item.password == password
+        }) 
+        
+        if(!userExist){
+            alert("User does not exist!");  
+        }else{
+            history.push({pathname:"/weather", state :{ token: email}})
+        }
+    
+  }
+
+  return (
+    <div className="App">
+      <label>Email</label>
+      <input
+        type="text"
+        id="email-input"
+        placeholder="email"
+        value={email}
+        onKeyUp={handleInput}
+        onChange={(event) => {setEmail(event.target.value); setToken(event.target.value)}}
+      />
+      <br />
+      
+      <label>Password</label>
+      <input
+        type="password"
+        id="password-input"
+        placeholder="Password"
+        onKeyUp={handleInput}
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+      />
+      <br />
+      <button
+        type="submit"
+        id="button-input"
+        disabled={isEnable}
+        onClick={() => handleSubmit(email, password)}
+      >
+        Register
+      </button>
+    </div>
+  );
+};
+
+export default Registration;  
