@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import usersData from '../users.json'
 import { Route, Redirect } from 'react-router'
 import { useHistory } from "react-router-dom";
+import '../App.css';
 
 const Registration=(props)=> {
 
@@ -40,7 +41,7 @@ const Registration=(props)=> {
   }
 
   return (
-    <div className="App">
+    <div className="login-wrapper">
       <label>Email</label>
       <input
         type="text"
@@ -50,8 +51,6 @@ const Registration=(props)=> {
         onKeyUp={handleInput}
         onChange={(event) => {setEmail(event.target.value); setToken(event.target.value)}}
       />
-      <br />
-      
       <label>Password</label>
       <input
         type="password"
@@ -61,7 +60,6 @@ const Registration=(props)=> {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
-      <br />
       <button
         type="submit"
         id="button-input"
