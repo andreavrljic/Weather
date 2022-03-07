@@ -6,7 +6,7 @@ import useForecast from './hooks/useForecast';
 const LocationForm = (props) => {
 
     const [input, setInput] = useState(""); 
-    const {forecast, submitRequest}= useForecast(); 
+    // const {forecast, submitRequest}= useForecast(); 
 
     const handleOnChange = e => {
         setInput(e.target.value); 

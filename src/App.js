@@ -5,6 +5,7 @@ import RegistrationForm from './components/register';
 import LocationList from './components/locationList'
 import WeatherTown from './components/showByTown/weatherTown';
 import DayTable from './components/dayTableWeather/dayTable'
+import FavouriteList from './components/favouriteList'
 
 const api = {
   key:"2c3d5d3913ae374842bd32576a795dd2",
@@ -22,8 +23,8 @@ function App() {
         <Route path="/weather/:imegrada/day">
             <DayTable/>
           </Route>
-          <Route path="/weather/favoutires">
-            {/* <FavouriteList/> */}
+          <Route path="/weather/favourites">
+            <FavouriteList/>
           </Route>
           <Route path="/weather/:imegrada">
             <WeatherTown />

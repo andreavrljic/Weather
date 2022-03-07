@@ -3,8 +3,9 @@ import usersData from '../users.json'
 import { useHistory } from "react-router-dom";
 import '../App.css';
 
-const Registration=(props)=> {
 
+const Registration=(props)=> {
+ 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isEnable, setEnable] = useState(true);
@@ -39,6 +40,13 @@ const Registration=(props)=> {
     
   }
 
+  const handleRegistration =(email, password)=> {
+
+     
+
+  }
+
+
   return (
     <div className="login-wrapper">
       <label>Email</label>
@@ -59,13 +67,21 @@ const Registration=(props)=> {
         value={password}
         onChange={(event) => setPassword(event.target.value)}
       />
+      {/* <button
+        type="submit"
+        id="button-input"
+        disabled={isEnable}
+        onClick={() => handleRegistration(email, password)}
+      >
+        Register
+      </button> */}
       <button
         type="submit"
         id="button-input"
         disabled={isEnable}
         onClick={() => handleSubmit(email, password)}
       >
-        Register
+        Login
       </button>
     </div>
   );

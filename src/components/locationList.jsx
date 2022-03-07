@@ -2,14 +2,17 @@ import React, { useState } from 'react'
 import Locations from './locations'
 import LocationForm from './locationForm';
 import useForecast from './hooks/useForecast';
-
+import {useHistory} from 'react-router-dom'
 
 import axios from 'axios';
 
 const LocationList = (props) => {
+    let history = useHistory(); 
     const { forecast, submitRequest } = useForecast();
     let data = JSON.parse(sessionStorage.getItem('locationList')); 
     const [locationCards, setLocationCards] = useState(data ? data : []);
+    
+    
     const addLocations = async location => {
 
         //Check if there is 10 locations 
@@ -22,25 +25,22 @@ const LocationList = (props) => {
         } else {
             alert("You can not add more locations. Maximum is 10.")
         }
-
-
     }
 
     const removeElement = (elementName) => {
 
-        console.log("removeee")
         const withoutRemoved = [...locationCards].filter(element => element.location !== elementName)
         setLocationCards(withoutRemoved);
         sessionStorage.setItem('locationList', JSON.stringify(withoutRemoved));
 
     }
 
+    
 
     return (
         <div>
             <h3>Select locations to see weather</h3>
-            <button>FAVOUTIRE</button>
-            <br/>
+            <button onClick={()=>{history.push("/weather/favourites")}}>FAVOURITE</button>
             <LocationForm onSubmit={addLocations} />
             <Locations locations={locationCards.length > 0 ?
                 locationCards :
