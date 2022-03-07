@@ -5,7 +5,6 @@ import useForecast from './hooks/useForecast';
 
 const LocationForm = (props) => {
 
-    console.log(props)
     const [input, setInput] = useState(""); 
     const {forecast, submitRequest}= useForecast(); 
 
@@ -14,14 +13,10 @@ const LocationForm = (props) => {
     }
     const handleSubmit = async e => {
         e.preventDefault(); 
-        // const rez = await 
+        
         props.onSubmit(
-            // id:Math.floor(Math.random()*10000),
             {location:input}
         )
-    
-        // submitRequest(input)
-        // console.log("ffffffffffff" , forecast)
         setInput('')
     }
 

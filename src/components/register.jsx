@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import usersData from '../users.json'
-import { Route, Redirect } from 'react-router'
 import { useHistory } from "react-router-dom";
 import '../App.css';
 

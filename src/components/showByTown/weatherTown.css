@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.day-weather-box{
+    margin: 10px 20px 10px 20px;
+}
