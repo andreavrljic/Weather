@@ -3,6 +3,7 @@ import Locations from './locations'
 import LocationForm from './locationForm';
 import useForecast from './hooks/useForecast';
 import {useHistory} from 'react-router-dom'
+import './locationList.css'
 
 import axios from 'axios';
 
@@ -35,12 +36,11 @@ const LocationList = (props) => {
 
     }
 
-    
-
     return (
-        <div>
-            <h3>Select locations to see weather</h3>
-            <button onClick={()=>{history.push("/weather/favourites")}}>FAVOURITE</button>
+        <div className='listContainer'>
+            <h3 className="title">Select locations to see weather</h3>
+            <button className='button' onClick={()=>history.push("/")}>BACK</button>
+            <button className="button" onClick={()=>{history.push("/weather/favourites")}}>FAVOURITE</button>
             <LocationForm onSubmit={addLocations} />
             <Locations locations={locationCards.length > 0 ?
                 locationCards :

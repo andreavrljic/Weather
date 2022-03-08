@@ -1,10 +1,30 @@
-.container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:center;
+.containerDays{
+    background-color: var(--background-color);
+    display: table;
+    padding: 10px;
+    margin: 20px;
+    position: unset;
+    width: 100%;
+    color: var(--white-color);
+    height: 100vh;
 }
 
 .day-weather-box{
     margin: 10px 20px 10px 20px;
+}
+
+.dayBox{
+    background-color: var(--yellow-color);
+    background-color: white;
+    margin: 5px;
+    /*** Just to center the text ***/
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fiveDaysContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }

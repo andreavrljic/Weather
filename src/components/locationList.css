@@ -1,0 +1,13 @@
+.listContainer{
+    background-color: var(--background-color);
+    display: table;
+    padding: 10px;
+    margin: 20px;
+    position: unset;
+    width: 100%;
+    color: var(--white-color);
+}
+
+.title{
+    padding: 15px;
+}

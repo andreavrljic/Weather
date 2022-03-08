@@ -22,8 +22,8 @@ const DayTable = (props) => {
   }
 
   return (
-    <div className="table">
-      <button onClick={()=>history.goBack()}>Back</button>
+    <div className="tableContainer" style={{background : "yellow"}}>
+      <button className="button" onClick={()=>history.goBack()}>BACK</button>
       <Table striped bordered hover variant="dark">
         <thead>
           <tr><th colSpan={4}>{location.state.city}</th></tr>
@@ -36,11 +36,6 @@ const DayTable = (props) => {
         </thead>
         <tbody>
           {prepareTableData()}
-          <tr>
-            <td>3</td>
-            <td colSpan={2}>Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
         </tbody>
       </Table>
     </div>

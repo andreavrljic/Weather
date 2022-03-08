@@ -4,6 +4,7 @@ import './weatherTown.css'
 import Geocode from 'react-geocode';
 import {useState,useEffect} from 'react'
 import * as functions from '../helpers/getWeatherData'
+import './weatherTown.css'
     
 
 const WeatherTown = (props)=> {
@@ -42,14 +43,13 @@ const WeatherTown = (props)=> {
     
     return(
         
-        <div className="wrapper" onClick={()=>{}}>
-            <h1>{location.state}</h1>
-            <button onClick={()=> history.goBack()}>Back</button>
-           <div className='container'>
-               
+        <div className="containerDays" onClick={()=>{}}>
+            <h1 className="title">{location.state}</h1>
+            <button className="button" onClick={()=> history.goBack()}>Back</button>
+           <div className="fiveDaysContainer">
                {
                  fiveDaysData.map((element, index) => {
-                   return  <FiveDayBox key={index} city={location.state} boxData ={getDayProps(element)}/>  
+                   return  <FiveDayBox className="dayBox" key={index} city={location.state} boxData ={getDayProps(element)}/>  
                  })
                 }
             </div> 

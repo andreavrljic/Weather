@@ -15,20 +15,19 @@ const FavoutireList = (props) => {
 
     const removeFavourite = (elementName) => {
 
-        console.log("removeee")
+        
         const withoutRemoved = [...locationCards].filter(element => element.location !== elementName)
         setLocationCards(withoutRemoved);
-        console.log(locationCards)
+    
         sessionStorage.setItem('favouriteList', JSON.stringify(withoutRemoved));
 
     }
 
 
     return (
-        <div>
-            {console.log(data)}
-            <h3>YOUR FAVOURITE LIST</h3>
-            <button className="buttonBack" onClick={()=> history.goBack()}>BACK</button>
+        <div className='listContainer'>
+            <h3 className='title'>YOUR FAVOURITE LIST</h3>
+            <button className="button" onClick={()=> history.goBack()}>BACK</button>
             <Locations locations={locationCards.length > 0 ?
                 locationCards :
                 JSON.parse(sessionStorage.getItem('favouriteList'))}

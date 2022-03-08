@@ -1,6 +1,7 @@
 import { WeatherIcon } from '../helpers/weatherIcon'
 import * as func from '../helpers/getWeatherData'
 import { useHistory } from "react-router-dom";
+import './fiveDaysBox.css'
 
 const FiveDayBox = (props) => {
 

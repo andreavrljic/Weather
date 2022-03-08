@@ -1,42 +1,67 @@
-.login-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+:root{
+
+    --primary-color: rgb(196, 196, 36);
+    --secondary-color: rgb(87, 89, 59) ;
+    --button-color: rgb(51, 107, 11);
+    --black-color: black; 
+    --white-color: white;
+    --background-color: rgb(84, 131, 56);
+    --yellow-color: rgb(201, 201, 92); 
 }
 
-
-
-.App {
-  text-align: center;
+.login-wrapper{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mainTitle{
+    background-color: var(--primary-color);
+    width:100%;
+    padding: 10px;
+    box-shadow: 5px 5px 5px var(--black-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 10px;
+    position: relative
 }
 
-.App-link {
-  color: #61dafb;
+.login-box{
+    border: 2px solid black;
+    background-color: var(--primary-color);
+    display: inline-grid;
+    justify-content: space-evenly;
+    align-items: baseline;
+    justify-items: center;
+    padding: 20px;
+    box-shadow: 3px 3px 3px var(--secondary-color);
+
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button{
+    margin: 5px;
+    color: var(--white-color);
+    background-color: var(--button-color);
+    border: none;
+    box-shadow: 2px 2px 2px var(--black-color);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tableContainer{
+    background-color: var(--background-color);
+    display: table;
+    padding: 30px;
+    margin: 20px;
+    width: 100%;
+    color: var(--white-color);
 }

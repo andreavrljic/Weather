@@ -4,6 +4,7 @@ import { faCloud, faBolt, faCloudRain, faCloudShowersHeavy, faSnowflake, faSmog,
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useHistory } from "react-router-dom";
 import Geocode from 'react-geocode';
+import './locations.css'
 
 
 
@@ -13,7 +14,6 @@ const Locations = (props) => {
     const history = useHistory();
     let listOfLocations = props.locations;
     let weatherIcon = null;
-    console.log("aaaaaaa",listOfLocations)
     const setTemperature = (temp) => {
         return (temp - 273.15).toFixed(1)
     }
@@ -39,15 +39,14 @@ const Locations = (props) => {
     }
 
     const addToFavourite = (data) => {
-        
-        console.log(data)
+
         if (!sessionStorage.getItem('favouriteList')) {
 
             sessionStorage.setItem('favouriteList', JSON.stringify([data]))
         } else {
             let currentFavourite = JSON.parse(sessionStorage.getItem('favouriteList'));
 
-            const update = [data,...currentFavourite];
+            const update = [data, ...currentFavourite];
             sessionStorage.setItem('favouriteList', JSON.stringify(update));
 
         }
@@ -58,22 +57,25 @@ const Locations = (props) => {
     return listOfLocations ?
         listOfLocations.map((element, index) => (
             <div key={index} className="container">
-
                 <div className="col-md-12 mt-2">
-                    {!props.favourite ? 
-                    <FontAwesomeIcon onClick={() => props.removeElement(element.location)} icon={faTrashCan} /> : 
-                    null}
-                   { !props.favourite ? <FontAwesomeIcon onClick={() => addToFavourite(element)} icon={faHeart } /> :
-                    <FontAwesomeIcon onClick={() => props.removeFavourite(element.location)} icon={faHeartBroken} />}
                     <Card className="text-white" >
                         <Card.Img
-                            src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1/100px270"
+                            src="https://cdn.wallpapersafari.com/66/28/dXOpWQ.jpg"
                             alt="Card image"
-                            height={"200px"}
-                            width={"900px"} />
+                            height={"250px"}
+                            width={"400px"}
+                            variant="top"
+                        />
                         <Card.ImgOverlay>
-                            <div className='bg-dark bg-opacity-50 py-1 px-1 mx-1 my-1'>
-                                <Card.Title onClick={() => detailForecast(element.location)}>{element.location}</Card.Title>
+                            <div className="cardIcons">
+                                {!props.favourite ? <FontAwesomeIcon onClick={() => addToFavourite(element)} icon={faHeart} /> :
+                                    <FontAwesomeIcon onClick={() => props.removeFavourite(element.location)} icon={faHeartBroken} />}
+                                {!props.favourite ?
+                                    <FontAwesomeIcon onClick={() => props.removeElement(element.location)} icon={faTrashCan} /> :
+                                    null}
+                            </div>
+                            <div className='cardShadow'>
+                                <Card.Title className="title" onClick={() => detailForecast(element.location)}>{element.location}</Card.Title>
                                 <FontAwesomeIcon icon={findIcon(element.data.weather[0].main)} />
                                 <h1>{setTemperature(element.data.main.temp)}&deg;C</h1>
                                 <p className='lead'>{element.data.weather[0].main}</p>
