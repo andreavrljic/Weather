@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card'
 import { faCloud, faBolt, faCloudRain, faCloudShowersHeavy, faSnowflake, faSmog, faTrashCan, faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

@@ -2,7 +2,7 @@ import { useLocation, useHistory } from "react-router-dom";
 import Table from 'react-bootstrap/Table'
 import { WeatherIcon } from '../helpers/weatherIcon'
 
-const DayTable = (props) => {
+const DayTable = () => {
   let history = useHistory(); 
   const location = useLocation();
   const prepareTableData = () => {

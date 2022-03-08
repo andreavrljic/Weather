@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import usersData from '../users.json'
 import { useHistory } from "react-router-dom";
 import '../App.css';
 

@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import Locations from './locations'
-import LocationForm from './locationForm';
-import useForecast from './hooks/useForecast';
 import { useHistory } from 'react-router-dom';
 
-const FavoutireList = (props) => {
+const FavoutireList = () => {
 
     let history = useHistory(); 
 

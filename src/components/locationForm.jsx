@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faSearch } from '@fortawesome/free-solid-svg-icons';
-import useForecast from './hooks/useForecast';
 
 const LocationForm = (props) => {
 
     const [input, setInput] = useState(""); 
-    // const {forecast, submitRequest}= useForecast(); 
+
 
     const handleOnChange = e => {
         setInput(e.target.value); 
