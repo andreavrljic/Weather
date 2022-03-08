@@ -6,6 +6,7 @@
     position: unset;
     width: 100%;
     color: var(--white-color);
+    height: 100vh;
 }
 
 .title{

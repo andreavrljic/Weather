@@ -16,11 +16,8 @@ export async function getOneDayHoursForecast(city, date) {
     const dayData = data.data.list.filter((element) => 
             new Date(element.dt_txt).toDateString() == date
         ).map(ele => ele)
-    console.log(dayData)
+    
 
 
     return dayData; 
 }
-// export const setTemperature =(temp)=>{
-//     return (temp-273.15).toFixed(1)
-// }

@@ -28,21 +28,15 @@ const Registration = (props) => {
 
 
   const handleSubmit = (email, password) => {
-    let userExist = usersData.some(item => {
-      return item.email == email && item.password == password
-    })
+    // let userExist = usersData.some(item => {
+    //   return item.email == email && item.password == password
+    // })
 
-    if (!userExist) {
-      alert("User does not exist!");
-    } else {
+    // if (!userExist) {
+    //   alert("User does not exist!");
+    // } else {
       history.push({ pathname: "/weather", state: { token: email } })
-    }
-
-  }
-
-  const handleRegistration = (email, password) => {
-
-
+    // }
 
   }
 
@@ -54,7 +48,7 @@ const Registration = (props) => {
         <input
           type="text"
           id="email-input"
-          placeholder="email"
+          placeholder="Email"
           value={email}
           onKeyUp={handleInput}
           onChange={(event) => { setEmail(event.target.value); setToken(event.target.value) }}
@@ -68,14 +62,7 @@ const Registration = (props) => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
-        {/* <button
-        type="submit"
-        id="button-input"
-        disabled={isEnable}
-        onClick={() => handleRegistration(email, password)}
-      >
-        Register
-      </button> */}
+        {isEnable? <label className="passwordinfo">*At least: 8 characters, 1 uppercase,1 number and special character.</label>:null}
         <button
           className="button"
           type="submit"

@@ -26,7 +26,7 @@ const DayTable = (props) => {
       <button className="button" onClick={()=>history.goBack()}>BACK</button>
       <Table striped bordered hover variant="dark">
         <thead>
-          <tr><th colSpan={4}>{location.state.city}</th></tr>
+          <tr><th className="title" colSpan={4}>{location.state.city}</th></tr>
           <tr>
             <th>#</th>
             <th>Hour</th>
