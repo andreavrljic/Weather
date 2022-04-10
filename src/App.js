@@ -5,6 +5,7 @@ import LocationList from './components/locationList'
 import WeatherTown from './components/showByTown/weatherTown';
 import DayTable from './components/dayTableWeather/dayTable'
 import FavouriteList from './components/favouriteList'
+import Login from './components/Login';
 import { useHistory } from 'react-router-dom';
 
 const api = {
@@ -37,7 +38,7 @@ function App() {
           </Route>
 
           <Route path="/">
-            <RegistrationForm />
+            <Login />
           </Route>
         </Switch>
       </BrowserRouter>

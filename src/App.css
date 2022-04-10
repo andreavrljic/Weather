@@ -1,41 +1,41 @@
-:root{
+:root {
 
     --primary-color: rgb(196, 196, 36);
-    --secondary-color: rgb(87, 89, 59) ;
+    --secondary-color: rgb(87, 89, 59);
     --button-color: rgb(51, 107, 11);
-    --black-color: black; 
+    --black-color: black;
     --white-color: white;
     --background-color: rgb(84, 131, 56);
-    --yellow-color: rgb(201, 201, 92); 
+    --yellow-color: rgb(201, 201, 92);
 }
 
-.login-wrapper{
+.login-wrapper {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     text-align: center;
     min-height: 100vh;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    flex-direction: row;
 
 }
 
-.mainTitle{
+.mainTitle {
     background-color: var(--primary-color);
-    width:100%;
+    width: 100%;
     padding: 10px;
     box-shadow: 5px 5px 5px var(--black-color);
 }
 
-.header{
+.header {
     width: 100%;
     height: 20px;
     margin-bottom: 10px;
     position: relative
 }
 
-.login-box{
+.login-box {
     border: 2px solid black;
     background-color: var(--primary-color);
     display: inline-grid;
@@ -48,7 +48,7 @@
 
 }
 
-.button{
+.button {
     margin: 5px;
     color: var(--white-color);
     background-color: var(--button-color);
@@ -58,21 +58,21 @@
     padding-right: 20px;
 }
 
-.button:disabled{
+.button:disabled {
     opacity: 0.5;
 }
 
-.tableContainer{
+.tableContainer {
     background-color: var(--background-color);
     display: table;
     padding: 30px;
-    margin: 20px;
+    margin-top: 20px;
     width: 100%;
     color: var(--white-color);
 }
 
-.passwordinfo{
+.passwordinfo {
 
-    font-size: 10px; 
-    width:150px
+    font-size: 10px;
+    width: 150px
 }

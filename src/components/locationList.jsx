@@ -2,18 +2,20 @@ import React, { useState } from 'react'
 import Locations from './locations'
 import LocationForm from './locationForm';
 import useForecast from './hooks/useForecast';
-import {useHistory} from 'react-router-dom'
+import { signOut } from 'firebase/auth'
+import { auth } from '../fire'
+import { useHistory } from 'react-router-dom'
 import './locationList.css'
 
 import axios from 'axios';
 
 const LocationList = (props) => {
-    let history = useHistory(); 
+    let history = useHistory();
     const { forecast, submitRequest } = useForecast();
-    let data = JSON.parse(sessionStorage.getItem('locationList')); 
+    let data = JSON.parse(sessionStorage.getItem('locationList'));
     const [locationCards, setLocationCards] = useState(data ? data : []);
-    
-    
+
+
     const addLocations = async location => {
 
         //Check if there is 10 locations 
@@ -36,11 +38,19 @@ const LocationList = (props) => {
 
     }
 
+    const handleLogout = () => {
+        signOut(auth);
+        history.push({ pathname: "/" })
+    }
+
+    //Trebaš blokirati da se ne može na putanju otići
+
     return (
         <div className='listContainer'>
+            <button onClick={() => handleLogout()}>Logout</button>
             <h3 className="title">Select locations to see weather</h3>
-            <button className='button' onClick={()=>history.push("/")}>BACK</button>
-            <button className="button" onClick={()=>{history.push("/weather/favourites")}}>FAVOURITE</button>
+            <button className='button' onClick={() => history.push("/")}>BACK</button>
+            <button className="button" onClick={() => { history.push("/weather/favourites") }}>FAVOURITE</button>
             <LocationForm onSubmit={addLocations} />
             <Locations locations={locationCards.length > 0 ?
                 locationCards :
